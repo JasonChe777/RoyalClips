@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".view.LoginActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/loginToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/boundary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/AppTheme">
+
+            <TextView
+                android:id="@+id/loginToolbarText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="monospace"
+                android:gravity="center_vertical"
+                android:text="@string/sign_in"
+                android:textColor="@color/loginTextColor"
+                android:textSize="@dimen/_20"
+                android:textStyle="bold" />
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/loginImageView"
+        android:layout_width="@dimen/_250"
+        android:layout_height="@dimen/_250"
+        android:layout_marginTop="55dp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/btnSignIn"
+        app:layout_constraintTop_toBottomOf="@id/loginImageView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtMobileNum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/loginTextColor"
+                android:hint="@string/mobile_number"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textColor="@color/loginTextColor"
+                android:textColorHint="@color/loginTextColor"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textColor="@color/loginTextColor"
+                android:textColorHint="@color/loginTextColor"
+
+                app:layout_constraintTop_toBottomOf="@id/edtMobileNum"
+                 />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvForgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="@string/forgot_password"
+                android:textColor="@color/loginTextColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edtPassword" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/loginBtnColor"
+        android:text="@string/sign_in"
+        app:layout_constraintTop_toBottomOf="@id/textInputLayout" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvNoAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="70dp"
+        android:text="@string/no_account"
+        android:textColor="@color/loginTextColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnSignIn" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="70dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/sign_up"
+        android:textColor="@color/loginTextColor"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/tvNoAccount"
+        app:layout_constraintTop_toBottomOf="@id/btnSignIn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

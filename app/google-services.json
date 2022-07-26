@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "202680910338",
+    "project_id": "royalclips-cdcc2",
+    "storage_bucket": "royalclips-cdcc2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:202680910338:android:7dcf1984f62623c7749d1b",
+        "android_client_info": {
+          "package_name": "com.example.royalclips"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "202680910338-srs238lh73somh7h7104ii6231atbujm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUKUserpqG8UHINxk-ma1uBvJMC50F8CQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "202680910338-srs238lh73somh7h7104ii6231atbujm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
