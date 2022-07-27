@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/navBookAppointment"
+            android:icon="@drawable/ic_baseline_edit_calendar_24"
+            android:title="Book Appointment"/>
+
+        <item
+            android:id="@+id/navServices"
+            android:icon="@drawable/ic_baseline_content_cut2_24"
+            android:title="Our Services"/>
+
+        <item
+            android:id="@+id/navOffers"
+            android:icon="@drawable/ic_baseline_local_offer_24"
+            android:title="Offers"/>
+
+        <item
+            android:id="@+id/navContact"
+            android:icon="@drawable/ic_baseline_connect_without_contact_24"
+            android:title="How to Reach?"/>
+
+        <item
+            android:id="@+id/navWorkingHours"
+            android:icon="@drawable/ic_baseline_access_time_24"
+            android:title="Working Hours"/>
+
+        <item
+            android:id="@+id/navUserRatings"
+            android:icon="@drawable/ic_baseline_star_rate_24"
+            android:title="User Ratings"/>
+
+        <item
+            android:id="@+id/navShare"
+            android:icon="@drawable/ic_baseline_share_24"
+            android:title="Share"/>
+
+        <item
+            android:id="@+id/navAbout"
+            android:icon="@drawable/ic_baseline_info_24"
+            android:title="About"/>
+
+
+
+
+    </group>
+</menu>

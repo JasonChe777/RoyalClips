@@ -4,10 +4,19 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/drawable/boundary.xml" value="0.214" />
+        <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/drawable/ic_baseline_access_time_24.xml" value="0.309" />
+        <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/drawable/ic_baseline_bookmark_added_24.xml" value="0.309" />
+        <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/drawable/ic_baseline_connect_without_contact_24.xml" value="0.309" />
+        <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/drawable/ic_baseline_content_cut2_24.xml" value="0.309" />
+        <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/drawable/ic_baseline_content_cut_24.xml" value="0.309" />
+        <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/drawable/ic_baseline_edit_calendar_24.xml" value="0.309" />
+        <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/drawable/ic_baseline_star_rate_24.xml" value="0.309" />
+        <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/drawable/ic_baseline_store_24.xml" value="0.309" />
         <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/layout/activity_login.xml" value="0.33" />
-        <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/layout/activity_main.xml" value="0.4348958333333333" />
+        <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/layout/activity_register.xml" value="0.33" />
         <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/layout/activity_splash_screen.xml" value="0.33" />
+        <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/menu/menu_drawer_nav.xml" value="0.33" />
       </map>
     </option>
   </component>
