@@ -36,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
 
 
         binding.btnSignIn.setOnClickListener {
-            viewModel.doLogin(binding.edtMobileNum.text.toString(), binding.edtPassword.text.toString())
+            viewModel.doLogin(mobileNo = binding.edtMobileNum.text.toString(), password = binding.edtPassword.text.toString())
 
         }
 

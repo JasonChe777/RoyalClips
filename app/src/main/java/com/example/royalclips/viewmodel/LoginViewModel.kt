@@ -2,9 +2,9 @@ package com.example.royalclips.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.royalclips.model.ApiClient
-import com.example.royalclips.model.ApiService
-import com.example.royalclips.model.LoginResponse
+import com.example.royalclips.model.remote.ApiClient
+import com.example.royalclips.model.remote.ApiService
+import com.example.royalclips.model.data.login.LoginResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

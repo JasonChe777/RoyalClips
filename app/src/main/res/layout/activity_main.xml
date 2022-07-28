@@ -27,6 +27,16 @@
                 android:minHeight="?attr/actionBarSize"
                 android:theme="@style/AppTheme">
 
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btnMenu"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:backgroundTint="@color/splashScreenBackgroundColor"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/ic_baseline_menu_24" />
+
                 <TextView
                     android:id="@+id/homeToolbarText"
                     android:layout_width="wrap_content"
@@ -38,6 +48,17 @@
                     android:textColor="@color/loginTextColor"
                     android:textSize="@dimen/_20"
                     android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btnNotification"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/splashScreenBackgroundColor"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginStart="150dp"
+                    android:src="@drawable/ic_baseline_notifications_24" />
+
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
 

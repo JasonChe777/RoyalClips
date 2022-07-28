@@ -1,13 +1,11 @@
 package com.example.royalclips.viewmodel
 
-import android.text.BoringLayout.make
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.royalclips.model.ApiClient
-import com.example.royalclips.model.ApiService
-import com.example.royalclips.model.RegisterRequest
-import com.example.royalclips.model.RegisterResponse
+import com.example.royalclips.model.remote.ApiClient
+import com.example.royalclips.model.remote.ApiService
+import com.example.royalclips.model.data.register.RegisterRequest
+import com.example.royalclips.model.data.register.RegisterResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

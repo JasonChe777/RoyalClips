@@ -1,4 +1,4 @@
-package com.example.royalclips.model
+package com.example.royalclips.model.remote
 
 import com.example.royalclips.model.Constants.BASE_URL
 import okhttp3.OkHttpClient

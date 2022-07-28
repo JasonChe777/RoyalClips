@@ -6,9 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import com.example.royalclips.R
 import com.example.royalclips.databinding.ActivityRegisterBinding
-import com.example.royalclips.model.RegisterRequest
+import com.example.royalclips.model.data.register.RegisterRequest
 import com.example.royalclips.viewmodel.RegisterViewModel
 import com.google.firebase.messaging.FirebaseMessaging
 

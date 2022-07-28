@@ -1,4 +1,4 @@
-package com.example.royalclips.model
+package com.example.royalclips.model.data.register
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,4 +1,4 @@
-package com.example.royalclips.model
+package com.example.royalclips.model.data.login
 
 data class LoginResponse(
     val apiToken: String,
