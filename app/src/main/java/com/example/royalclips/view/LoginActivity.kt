@@ -5,10 +5,11 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import android.widget.Toast.makeText
 import androidx.lifecycle.ViewModelProvider
 import com.example.royalclips.databinding.ActivityLoginBinding
+import com.example.royalclips.model.data.login.LoginRequest
 import com.example.royalclips.viewmodel.LoginViewModel
-import retrofit2.*
 
 class LoginActivity : AppCompatActivity() {
 
@@ -36,7 +37,10 @@ class LoginActivity : AppCompatActivity() {
 
 
         binding.btnSignIn.setOnClickListener {
-            viewModel.doLogin(mobileNo = binding.edtMobileNum.text.toString(), password = binding.edtPassword.text.toString())
+            val loginRequest = LoginRequest(
+                binding.edtMobileNum.text.toString(), binding.edtPassword.text.toString()
+            )
+            viewModel.doLogin(loginRequest)
 
         }
 
@@ -46,12 +50,18 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun setUpObserver() {
+        viewModel.goToHomeScreen.observe(this){
+            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+        }
+
         viewModel.loginLiveData.observe(this){
         editor.putString("TOKEN_ID", it.apiToken)
         }
 
+
         viewModel.error.observe(this){
-            Toast.makeText(this,it, Toast.LENGTH_LONG).show()
+
+            makeText(this,it, Toast.LENGTH_LONG).show()
         }
     }
 
