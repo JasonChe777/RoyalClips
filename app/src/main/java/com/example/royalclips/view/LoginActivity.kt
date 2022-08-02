@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.royalclips.databinding.ActivityLoginBinding
 import com.example.royalclips.model.data.login.LoginRequest
 import com.example.royalclips.viewmodel.LoginViewModel
+import com.google.android.material.snackbar.Snackbar
 
 class LoginActivity : AppCompatActivity() {
 
@@ -50,6 +51,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun setUpObserver() {
+
         viewModel.goToHomeScreen.observe(this){
             startActivity(Intent(this@LoginActivity, MainActivity::class.java))
         }
@@ -61,7 +63,7 @@ class LoginActivity : AppCompatActivity() {
 
         viewModel.error.observe(this){
 
-            makeText(this,it, Toast.LENGTH_LONG).show()
+            Snackbar.make(binding.root,it,Snackbar.LENGTH_SHORT).show()
         }
     }
 

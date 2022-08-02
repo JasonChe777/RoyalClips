@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.royalclips.databinding.ActivityRegisterBinding
 import com.example.royalclips.model.data.register.RegisterRequest
 import com.example.royalclips.viewmodel.RegisterViewModel
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.messaging.FirebaseMessaging
 
 class RegisterActivity : AppCompatActivity() {
@@ -47,16 +48,19 @@ class RegisterActivity : AppCompatActivity() {
             )
             if (binding.edtPassword.text.toString() == binding.edtConfirmPassword.text.toString()) {
                 viewModel.doRegister(registerRequest)
-                Toast.makeText(this, "Sign Up Successfully!", Toast.LENGTH_SHORT).show()
             } else {
 
-                Toast.makeText(
-                    this,
+                Snackbar.make(
+                    binding.root,
                     "Password Doesn't Match!\nPlease Try Again!",
-                    Toast.LENGTH_SHORT
+                    Snackbar.LENGTH_SHORT
                 ).show()
             }
 
+        }
+
+        binding.tvSignIn.setOnClickListener {
+            startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
         }
     }
 
@@ -68,7 +72,7 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         viewModel.error.observe(this) {
-            Toast.makeText(this, it, Toast.LENGTH_LONG).show()
+            Snackbar.make(binding.root, it, Snackbar.LENGTH_LONG).show()
         }
     }
 }

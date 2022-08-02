@@ -28,11 +28,14 @@ class RegisterViewModel: ViewModel(){
         val registerApiCall: Call<RegisterResponse> = apiService.doRegister(registerRequest)
         registerApiCall.enqueue(object : Callback<RegisterResponse> {
             override fun onResponse(call: Call<RegisterResponse>, response: Response<RegisterResponse>) {
-                if (response.body()?.status==0){
-                    goToLogin.postValue(true)
-
-                }else{
-                    error.postValue("Failed to Sign Up!")
+                when (response.body()?.status) {
+                    0 -> {
+                        goToLogin.postValue(true)
+                    }
+                    1 -> error.postValue(response.body()?.message)
+                    else -> {
+                        error.postValue(response.body()?.message)
+                    }
                 }
             }
 

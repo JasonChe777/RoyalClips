@@ -30,11 +30,18 @@ class LoginViewModel: ViewModel() {
         val loginApiCall: Call<LoginResponse> = apiService.doLogin(loginRequest)
         loginApiCall.enqueue(object : Callback<LoginResponse> {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-                if (response.body()?.status==0){
-                    loginLiveData.postValue(response.body())
-                    goToHomeScreen.postValue(true)
-                }  else {
-                    error.postValue("Please Register An Account First!")
+                when (response.body()?.status) {
+                    0 -> {
+                        loginLiveData.postValue(response.body())
+                        goToHomeScreen.postValue(true)
+
+                    }
+                    1 -> {
+                        error.postValue(response.body()?.message)
+                    }
+                    else -> {
+                        error.postValue(response.body()?.message)
+                    }
                 }
             }
 
@@ -44,4 +51,5 @@ class LoginViewModel: ViewModel() {
             }
         })
     }
+
 }
