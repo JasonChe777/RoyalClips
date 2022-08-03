@@ -1,17 +1,19 @@
 package com.example.royalclips.model.data.getBarber
 
 data class Barber(
-    val barberId: String,
+    val barberId: Int,
     val barberName: String,
     val breakTimeFrom: String,
     val breakTimeTo: String,
     val gender: String,
-    val hasDefualtServices: String,
+    val hasDefaultServices: Int,
     val holiday: String,
-    val isAdmin: String,
-    val isBarber: String,
+    val isAdmin: Int,
+    val isBarber: Int,
     val mobileNo: String,
     val password: String,
+    val payment: Double,
     val profilePic: String,
-    val userRating: String
+    val type: String,
+    val userRating: Double
 )

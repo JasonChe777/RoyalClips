@@ -16,4 +16,6 @@
     <string name="our_services">\t\t\tOUR \n SERVICES</string>
     <string name="shop_open">BARBERSHOP \n \tNOW OPEN</string>
     <string name="explore_more">\t\tEXPLORE \n \t\t\tMORE</string>
+    <string name="select_barber">SelectBarber</string>
+    <string name="select_service">Select Service</string>
 </resources>
