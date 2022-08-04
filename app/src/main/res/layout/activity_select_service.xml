@@ -8,7 +8,7 @@
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/SelectServiceAppBarLayout"
+        android:id="@+id/selectServiceAppBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/SelectServiceToolbar"
+            android:id="@+id/selectServiceToolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/boundary"
@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/btn_change_barber"
-        app:layout_constraintTop_toBottomOf="@id/SelectServiceAppBarLayout"
+        app:layout_constraintTop_toBottomOf="@id/selectServiceAppBarLayout"
         tools:itemCount="8"
         tools:listitem="@layout/item_select_service" />
 
@@ -63,4 +63,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btn_change_barber" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressBar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:indeterminate="true"
+        app:indicatorColor="@color/loginTextColor"
+        app:indicatorDirectionCircular="clockwise"
+        app:indicatorSize="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:trackColor="@color/splashScreenBackgroundColor"
+        app:trackThickness="20dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

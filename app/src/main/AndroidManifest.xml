@@ -16,7 +16,16 @@
         android:theme="@style/Theme.RoyalClips"
         tools:targetApi="31">
         <activity
-            android:name=".SelectServiceActivity"
+            android:name=".view.AppointmentSummaryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.SelectTimeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.AboutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.SelectServiceActivity"
             android:exported="false" />
         <activity
             android:name=".view.SelectBarberActivity"

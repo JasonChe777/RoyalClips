@@ -49,17 +49,18 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:textColor="@color/loginTextColor"
                     android:text="BarberName"
+                    android:textColor="@color/loginTextColor"
                     android:textStyle="bold" />
 
                 <RatingBar
                     android:id="@+id/rbRating"
-                    android:background="@color/loginTextColor"
                     style="@style/Base.Widget.AppCompat.RatingBar.Small"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="4dp" />
+                    android:layout_margin="4dp"
+                    android:progressTint="@color/purple_700"
+                    android:background="@color/loginBtnColor" />
             </LinearLayout>
         </RelativeLayout>
     </LinearLayout>
