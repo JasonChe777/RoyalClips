@@ -12,7 +12,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 
-class SelectBarberViewModel: ViewModel() {
+class SelectBarberViewModel : ViewModel() {
 
     val barbersLiveData = MutableLiveData<ArrayList<Barber>>()
     val loadingLiveData = MutableLiveData<Boolean>()
@@ -20,26 +20,29 @@ class SelectBarberViewModel: ViewModel() {
     private lateinit var apiService: ApiService
 
 
-
-    fun getBarbers(){
-         loadingLiveData.postValue(true)
+    fun getBarbers() {
+        loadingLiveData.postValue(true)
 
         retrofit = ApiClient.getRetrofit()
         apiService = retrofit.create(ApiService::class.java)
 
-        if(barbersLiveData.value == null){
-            val call: Call<GetBarberResponse> =apiService.getBarbers()
+        if (barbersLiveData.value == null) {
+            val call: Call<GetBarberResponse> = apiService.getBarbers()
             call.enqueue(object : Callback<GetBarberResponse> {
-                override fun onResponse(call: Call<GetBarberResponse>, response: Response<GetBarberResponse>) {
+                override fun onResponse(
+                    call: Call<GetBarberResponse>,
+                    response: Response<GetBarberResponse>
+                ) {
                     loadingLiveData.postValue(false)
                     if (response.isSuccessful) {
-                        if(response.body()?.status == 0){
+                        if (response.body()?.status == 0) {
                             barbersLiveData.postValue(response.body()?.barbers)
                         } else {
                             Log.e("response error", response.body()!!.message)
                         }
                     }
                 }
+
                 override fun onFailure(call: Call<GetBarberResponse>, t: Throwable) {
                     loadingLiveData.postValue(false)
                     Log.e("response.body()", t.toString())

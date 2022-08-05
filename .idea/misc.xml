@@ -28,9 +28,11 @@
         <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/drawable/ic_duration.xml" value="0.3185" />
         <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3185" />
         <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/drawable/ic_outline_arrow_circle_right_24.xml" value="0.3185" />
+        <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/drawable/ic_up_arrow.xml" value="0.2855" />
         <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/drawable/selector_check_circle_outline_24.xml" value="0.3185" />
-        <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/drawable/time_slot_available.xml" value="0.3185" />
-        <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/drawable/time_slot_selected.xml" value="0.3185" />
+        <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/drawable/time_slot_available.xml" value="0.16" />
+        <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/drawable/time_slot_booked.xml" value="0.1885" />
+        <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/drawable/time_slot_selected.xml" value="0.18" />
         <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/layout/activity_about.xml" value="0.4473958333333333" />
         <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/layout/activity_appointment_summary.xml" value="0.4328125" />
         <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/layout/activity_login.xml" value="0.33" />
@@ -38,7 +40,7 @@
         <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/layout/activity_register.xml" value="0.33" />
         <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/layout/activity_select_barber.xml" value="0.5255208333333333" />
         <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/layout/activity_select_service.xml" value="0.33" />
-        <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/layout/activity_select_time.xml" value="0.4328125" />
+        <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/layout/activity_select_time.xml" value="0.33" />
         <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/layout/activity_splash_screen.xml" value="0.33" />
         <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/layout/fragment_about.xml" value="0.3536458333333333" />
         <entry key="..\:/Users/che69/AndroidStudioProjects/RoyalClips/app/src/main/res/layout/fragment_book_summary.xml" value="0.47604166666666664" />

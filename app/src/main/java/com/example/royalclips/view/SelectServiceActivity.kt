@@ -1,8 +1,10 @@
 package com.example.royalclips.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -33,6 +35,26 @@ class SelectServiceActivity : AppCompatActivity() {
         setSupportActionBar(binding.selectServiceToolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24)
+
+        binding.btnChangeBarber.setOnClickListener {
+            finish()
+        }
+
+        binding.btnContinue.setOnClickListener {
+            if(viewModel.barberServicesSelectLiveData.value!!.size == 0){
+                val builder = AlertDialog.Builder(this)
+                    .setTitle("Services Error")
+                    .setMessage("Please select at least 1 services.")
+                    .setPositiveButton("Ok") { _, _ ->
+                    }
+                val alertDialog: AlertDialog = builder.create()
+                alertDialog.setCancelable(true)
+                alertDialog.show()
+            } else {
+                viewModel.updateAppointmentsSlot()
+                startActivity(Intent(this@SelectServiceActivity, SelectTimeActivity::class.java))
+            }
+        }
     }
 
     private fun setUpObserver() {

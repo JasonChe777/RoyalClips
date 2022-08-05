@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.royalclips.databinding.ItemSelectServiceBinding
 import com.example.royalclips.databinding.ItemSelectServiceClassBinding
+import com.example.royalclips.view.SelectServiceActivity
 import com.example.royalclips.viewmodel.SelectServiceViewModel
 
 class SelectServiceClassAdapter(
@@ -21,14 +22,14 @@ class SelectServiceClassAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SelectServiceHolder {
         binding = ItemSelectServiceClassBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        viewModel = ViewModelProvider(context as AppCompatActivity)[SelectServiceViewModel::class.java]
+        viewModel = ViewModelProvider(context as SelectServiceActivity)[SelectServiceViewModel::class.java]
 
         return SelectServiceHolder(binding)
     }
 
     override fun onBindViewHolder(holder: SelectServiceHolder, position: Int) {
         holder.apply {
-            val info = serviceTypeArrayList.get(position)
+            val info = serviceTypeArrayList[position]
             holder.bind(info)
         }
     }

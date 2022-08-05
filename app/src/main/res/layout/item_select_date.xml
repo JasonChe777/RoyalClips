@@ -10,7 +10,7 @@
         android:id="@id/llWrapper"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/loginTextColor"
+        android:background="@color/loginBtnColor"
         android:orientation="vertical"
         android:paddingLeft="24dp"
         android:paddingTop="16dp"

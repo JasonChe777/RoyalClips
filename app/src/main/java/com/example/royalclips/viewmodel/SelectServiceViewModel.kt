@@ -15,8 +15,9 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
+import kotlin.math.roundToInt
 
-class SelectServiceViewModel:ViewModel() {
+class SelectServiceViewModel : ViewModel() {
 
     private val retrofit: Retrofit = ApiClient.getRetrofit()
     private val barberApiService: ApiService = retrofit.create(ApiService::class.java)
@@ -24,11 +25,13 @@ class SelectServiceViewModel:ViewModel() {
     val barberServicesLiveData = MutableLiveData<ArrayList<Service>>()
     val barberServicesSelectLiveData = MutableLiveData<ArrayList<Int>>()
     val barberServicesTypeLiveData = MutableLiveData<ArrayList<String>>()
+    val appointmentsTotalDurationLiveData = MutableLiveData<Double>()
+    val appointmentsSlotLiveData = MutableLiveData<Int>()
     val loadingLiveData = MutableLiveData<Boolean>()
 
-    fun getServicesByBarber(barberId: Int){
+    fun getServicesByBarber(barberId: Int) {
         loadingLiveData.postValue(true)
-        if(barberServicesIdLiveData.value == null || barberId != barberServicesIdLiveData.value){
+        if (barberServicesIdLiveData.value == null || barberId != barberServicesIdLiveData.value) {
             val map = HashMap<String, String>()
             map["barber_id"] = barberId.toString()
             val reqJson: String = Gson().toJson(map)
@@ -36,14 +39,17 @@ class SelectServiceViewModel:ViewModel() {
                 reqJson.toRequestBody("application/json".toMediaTypeOrNull())
             val call: Call<GetBarberServiceResponse> = barberApiService.getBarberServices(body)
             call.enqueue(object : Callback<GetBarberServiceResponse> {
-                override fun onResponse(call: Call<GetBarberServiceResponse>, response: Response<GetBarberServiceResponse>) {
+                override fun onResponse(
+                    call: Call<GetBarberServiceResponse>,
+                    response: Response<GetBarberServiceResponse>
+                ) {
                     loadingLiveData.postValue(false)
                     if (response.isSuccessful) {
-                        if(response.body()!!.status == 0){
+                        if (response.body()!!.status == 0) {
                             barberServicesIdLiveData.postValue(barberId)
                             val serviceType = ArrayList<String>()
-                            for (service in response.body()!!.services){
-                                if(service.serviceType !in serviceType){
+                            for (service in response.body()!!.services) {
+                                if (service.serviceType !in serviceType) {
                                     serviceType.add(service.serviceType)
                                 }
                             }
@@ -55,6 +61,7 @@ class SelectServiceViewModel:ViewModel() {
                         }
                     }
                 }
+
                 override fun onFailure(call: Call<GetBarberServiceResponse>, t: Throwable) {
                     Log.e("response.body()", t.toString())
                     t.printStackTrace()
@@ -62,5 +69,16 @@ class SelectServiceViewModel:ViewModel() {
             })
 
         }
+    }
+
+    fun updateAppointmentsSlot() {
+        var totalDuration = 0.0
+        barberServicesLiveData.value!!.forEach() {
+            if (it.serviceId in barberServicesSelectLiveData.value!!) {
+                totalDuration += it.duration
+            }
+        }
+        appointmentsTotalDurationLiveData.postValue(totalDuration)
+        appointmentsSlotLiveData.postValue((totalDuration / 15).roundToInt())
     }
 }

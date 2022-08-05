@@ -8,9 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.royalclips.R
 import com.example.royalclips.databinding.ItemSelectServiceBinding
 import com.example.royalclips.model.Constants.BASE_IMAGE_URL
 import com.example.royalclips.model.data.getBarberServices.Service
+import com.example.royalclips.view.SelectServiceActivity
 import com.example.royalclips.viewmodel.SelectServiceViewModel
 
 class SelectServiceAdapter(private val context: Context, private val infoList: List<Service>) :
@@ -20,13 +22,13 @@ class SelectServiceAdapter(private val context: Context, private val infoList: L
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SelectServiceHolder {
         binding = ItemSelectServiceBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        viewModel = ViewModelProvider(context as AppCompatActivity)[SelectServiceViewModel::class.java]
+        viewModel = ViewModelProvider(context as SelectServiceActivity)[SelectServiceViewModel::class.java]
         return SelectServiceHolder(binding)
     }
 
     override fun onBindViewHolder(holder: SelectServiceHolder, position: Int) {
         holder.apply {
-            val info = infoList.get(position)
+            val info = infoList[position]
             holder.bind(info)
         }
     }
@@ -48,11 +50,18 @@ class SelectServiceAdapter(private val context: Context, private val infoList: L
             }
             binding.root.setOnClickListener {
                 binding.ivSelect.isSelected = !binding.ivSelect.isSelected
+                if (binding.ivSelect.isSelected){
+                    binding.ivSelect.setImageResource(R.drawable.ic_baseline_check_circle_24)
+                }else{
+                    binding.ivSelect.setImageResource(R.drawable.selector_check_circle_outline_24)
+                }
+
                 if (binding.ivSelect.isSelected && !viewModel.barberServicesSelectLiveData.value!!.contains(
                         service.serviceId
                     )
                 ) {
                     viewModel.barberServicesSelectLiveData.value!!.add(service.serviceId)
+
                 }
 
                 if (!binding.ivSelect.isSelected && viewModel.barberServicesSelectLiveData.value!!.contains(

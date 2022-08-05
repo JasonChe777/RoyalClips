@@ -5,13 +5,35 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
-
-    <LinearLayout
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/selectTimeAppBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/splashScreenBackgroundColor"
-        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/selectTimeToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/boundary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/AppTheme"
+            app:title="@string/select_service"
+            app:titleTextColor="@color/loginTextColor">
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llSelectTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/selectTimeAppBarLayout">
 
         <TextView
             android:id="@+id/tvMsg"
@@ -45,7 +67,7 @@
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/idDropDown"
+                android:id="@+id/ivDropDown"
                 android:layout_width="36.0dip"
                 android:layout_height="32dp"
                 android:layout_gravity="center_vertical"
@@ -78,7 +100,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                tools:itemCount="10"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="5"
+                tools:itemCount="20"
                 tools:listitem="@layout/item_select_time" />
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
     </LinearLayout>
@@ -94,19 +118,34 @@
         android:text="Cancel"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/btn_done"
+        app:layout_constraintEnd_toStartOf="@id/btn_continue"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_done"
+        android:id="@+id/btn_continue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginVertical="10dp"
         android:layout_marginRight="10dp"
         android:background="@color/teal_700"
-        android:text="Done"
+        android:text="Continue"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btn_cancel" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressBar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:indeterminate="true"
+        app:indicatorColor="@color/loginTextColor"
+        app:indicatorDirectionCircular="clockwise"
+        app:indicatorSize="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:trackColor="@color/splashScreenBackgroundColor"
+        app:trackThickness="20dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
