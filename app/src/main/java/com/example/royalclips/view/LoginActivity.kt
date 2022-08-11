@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import android.widget.Toast.makeText
 import androidx.lifecycle.ViewModelProvider
@@ -11,6 +12,7 @@ import com.example.royalclips.databinding.ActivityLoginBinding
 import com.example.royalclips.model.data.login.LoginRequest
 import com.example.royalclips.viewmodel.LoginViewModel
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.messaging.FirebaseMessaging
 
 class LoginActivity : AppCompatActivity() {
 
@@ -23,13 +25,11 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         viewModel = ViewModelProvider(this)[LoginViewModel::class.java]
-        sharedPreferences = getSharedPreferences("TOKEN_FILE", MODE_PRIVATE)
+        sharedPreferences = getSharedPreferences(FILE_NAME, MODE_PRIVATE)
         editor = sharedPreferences.edit()
         setContentView(binding.root)
         setUpObserver()
         initView()
-
-
 
 
     }
@@ -52,19 +52,39 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setUpObserver() {
 
-        viewModel.goToHomeScreen.observe(this){
-            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+        viewModel.userLiveData.observe(this) {
+            FirebaseMessaging.getInstance().token.addOnCompleteListener {
+                if (it.isSuccessful) {
+                    viewModel.updateFcmToken(it.result)
+                }
+            }
         }
 
-        viewModel.loginLiveData.observe(this){
-        editor.putString("TOKEN_ID", it.apiToken)
+        viewModel.goToHomeScreen.observe(this) {
+            if (it != null) {
+                editor.putInt(USER_ID, it.userId)
+                editor.putString(API_TOKEN, it.apiToken)
+                editor.putString(MOBILE_NO,it.mobileNo)
+                editor.commit()
+                startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+            }
+
         }
 
 
-        viewModel.error.observe(this){
 
-            Snackbar.make(binding.root,it,Snackbar.LENGTH_SHORT).show()
+
+        viewModel.error.observe(this) {
+
+            Snackbar.make(binding.root, it, Snackbar.LENGTH_SHORT).show()
         }
+    }
+
+    companion object {
+        const val FILE_NAME = "Account Details"
+        const val USER_ID = "USER ID"
+        const val API_TOKEN = "API TOKEN"
+        const val MOBILE_NO = "MOBILE_NO"
     }
 
 }

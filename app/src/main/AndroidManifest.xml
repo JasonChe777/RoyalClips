@@ -16,6 +16,27 @@
         android:theme="@style/Theme.RoyalClips"
         tools:targetApi="31">
         <activity
+            android:name=".view.ServiceDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ServiceListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ReachActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.WorkingHourActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.MyAppointmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ServiceCategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.AppointmentInfoActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.AppointmentSummaryActivity"
             android:exported="false" />
         <activity

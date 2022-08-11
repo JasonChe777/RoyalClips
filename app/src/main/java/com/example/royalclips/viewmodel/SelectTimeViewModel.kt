@@ -5,28 +5,25 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.royalclips.model.data.currentAppointments.CurrentAppointmentsResponse
 import com.example.royalclips.model.data.currentAppointments.Slot
-import com.example.royalclips.model.data.getBarberServices.Service
 import com.example.royalclips.model.remote.ApiClient
 import com.example.royalclips.model.remote.ApiService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
-import kotlin.math.roundToInt
 
 class SelectTimeViewModel : ViewModel() {
     private val retrofit: Retrofit = ApiClient.getRetrofit()
     private val apiService: ApiService = retrofit.create(ApiService::class.java)
     val currentAppointmentsLiveData = MutableLiveData<ArrayList<Slot>>()
-    val barberServicesIdLiveData = MutableLiveData<Int>()
-    val appointmentsSlotLiveData = MutableLiveData<Int>()
     val appointmentsDateLiveData = MutableLiveData<String>()
-    val appointmentsStartFromLiveData = MutableLiveData<Int>()
     val loadingLiveData = MutableLiveData<Boolean>()
+    val startFromSlotLiveData =  MutableLiveData<Int>(-1)
+    val slotNumberLiveDate = MutableLiveData<Int>()
 
-    fun loadCurrentAppointments() {
+    fun loadCurrentAppointments(barberId:Int) {
         loadingLiveData.postValue(true)
-        val url = "appointment/currentAppointments/" + barberServicesIdLiveData.value
+        val url = "appointment/currentAppointments/$barberId"
         val call: Call<CurrentAppointmentsResponse> = apiService.currentAppointments(url)
         call.enqueue(object : Callback<CurrentAppointmentsResponse> {
             override fun onResponse(
@@ -38,6 +35,8 @@ class SelectTimeViewModel : ViewModel() {
                     if (response.body()!!.status == 0) {
                         Log.e("loadCurrentAppointments", response.body()!!.slots.toString())
                         currentAppointmentsLiveData.postValue(response.body()!!.slots)
+
+                        appointmentsDateLiveData.postValue(response.body()!!.slots[0].date)
 
                     } else {
                         Log.e("response error", response.body()!!.message)
@@ -52,5 +51,20 @@ class SelectTimeViewModel : ViewModel() {
         })
     }
 
+    fun setSlotNumber(slotNumber:Int){
+       slotNumberLiveDate.postValue(slotNumber)
+    }
+
+    fun getFromAndToTimeString():ArrayList<String>{
+        var fromTimeString:String = ""
+        var toTimeString :String = ""
+        currentAppointmentsLiveData.value!!.forEach() {
+            if (it.date == appointmentsDateLiveData.value) {
+                fromTimeString = it.slots.keys.elementAt(startFromSlotLiveData.value!!).split("-")[0]
+                toTimeString = it.slots.keys.elementAt(startFromSlotLiveData.value!!+ slotNumberLiveDate.value!! - 1).split("-")[1]
+            }
+        }
+        return arrayListOf(fromTimeString,toTimeString)
+    }
 
 }

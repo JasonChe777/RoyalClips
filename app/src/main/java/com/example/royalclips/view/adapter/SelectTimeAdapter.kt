@@ -9,19 +9,21 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.royalclips.R
 import com.example.royalclips.databinding.ItemSelectTimeBinding
+import com.example.royalclips.view.SelectTimeActivity
+import com.example.royalclips.viewmodel.SelectServiceViewModel
 import com.example.royalclips.viewmodel.SelectTimeViewModel
 
 class SelectTimeAdapter(
     private val context: Context,
-    private val infoMap: Map<String, Boolean>
+    private val infoMap: Map<String, Boolean>,
+    private val viewModel:SelectTimeViewModel,
+    private val slotNumber:Int
 ) :
     RecyclerView.Adapter<SelectTimeAdapter.SelectDateHolder>() {
-    lateinit var viewModel: SelectTimeViewModel
     lateinit var binding: ItemSelectTimeBinding
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SelectDateHolder {
         binding = ItemSelectTimeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        viewModel = ViewModelProvider(context as AppCompatActivity)[SelectTimeViewModel::class.java]
         return SelectDateHolder(binding)
     }
 
@@ -57,15 +59,16 @@ class SelectTimeAdapter(
                 binding.tvTimeSlot.setBackgroundResource(R.drawable.time_slot_available)
             }
             binding.tvTimeSlot.setOnClickListener {
-                val slots = viewModel.appointmentsSlotLiveData.value!!
+                val slots = slotNumber
                 val freeSlots = freeSlots(slots, position)
                 if (freeSlots == -1) {
-                    viewModel.appointmentsStartFromLiveData.postValue(position)
+                   viewModel.startFromSlotLiveData.postValue(position)
+
                 } else {
                     val builder = AlertDialog.Builder(context)
-                        .setTitle("Login Error")
-                        .setMessage("Total required slots are $slots. From current selected position only $freeSlots are available.")
-                        .setPositiveButton("Ok") { _, _ ->
+                        .setTitle("Error")
+                        .setMessage("Required time slots are $slots. \nOnly $freeSlots slot is available within your time slot selection.")
+                        .setPositiveButton("Select Again") { _, _ ->
                         }
                     val alertDialog: AlertDialog = builder.create()
                     alertDialog.setCancelable(true)
@@ -73,9 +76,9 @@ class SelectTimeAdapter(
                 }
             }
 
-            viewModel.appointmentsStartFromLiveData.observe(context as AppCompatActivity) {
-                val slots = viewModel.appointmentsSlotLiveData.value!!
-                if (it != -1 && position in it until (it + slots)) {
+            viewModel.startFromSlotLiveData.observe(context as AppCompatActivity) {
+
+                if ( it != -1 && position in it until (it + slotNumber)) {
                     binding.tvTimeSlot.setBackgroundResource(R.drawable.time_slot_selected)
                 } else {
                     if (booked) {

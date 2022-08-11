@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/backgroundColor"
+    android:paddingBottom="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/boundary"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/iv_date_time_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_edit_calendar_24" />
+
+
+        <TextView
+            android:id="@+id/tv_apt_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Today, 05 February, 2022"
+            android:textColor="@color/loginTextColor"
+            android:layout_marginStart="@dimen/_20"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/iv_date_time_icon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_apt_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20"
+            android:textColor="@color/loginTextColor"
+            tools:text="9:30 AM to 10:00 AM (30 Minutes)"
+            app:layout_constraintStart_toEndOf="@id/iv_date_time_icon"
+            app:layout_constraintTop_toBottomOf="@id/tv_apt_date" />
+
+
+        <ImageView
+            android:id="@+id/iv_status"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_date_time_icon"
+            app:srcCompat="@drawable/ic_baseline_check_circle_outline_24" />
+
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            tools:text="Confirmed"
+            android:layout_marginStart="@dimen/_20"
+            android:textColor="@color/loginTextColor"
+            app:layout_constraintBottom_toBottomOf="@id/iv_status"
+            app:layout_constraintStart_toEndOf="@id/iv_status"
+            app:layout_constraintTop_toTopOf="@id/iv_status" />
+
+
+        <ImageView
+            android:id="@+id/ivArrow"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_outline_arrow_circle_right_24" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,10 +12,18 @@
     <string name="sign_in_register">SIGN IN</string>
     <string name="royal_clips">Royal Clips</string>
     <string name="sign_up_page">Sign Up</string>
-    <string name="book_appointment">\t\t\t\tBOOK \n APPOINTMENT</string>
-    <string name="our_services">\t\t\tOUR \n SERVICES</string>
+    <string name="book_appointment">\t\t\t\t\t\t\tBOOK \n APPOINTMENT</string>
+    <string name="our_services">\t\t\t\tOUR \n SERVICES</string>
     <string name="shop_open">BARBERSHOP \n \tNOW OPEN</string>
-    <string name="explore_more">\t\tEXPLORE \n \t\t\tMORE</string>
+    <string name="explore_more">\t\tEXPLORE \n \t\t\t\t\tMORE</string>
     <string name="select_barber">Select Barber</string>
     <string name="select_service">Select Service</string>
+    <string name="appointment_summary">Appointment Summary</string>
+    <string name="appointment_details">Appointment Details</string>
+    <string name="services">Services</string>
+    <string name="my_appointment">My Appointment</string>
+    <string name="working_hour">Working Hours</string>
+    <string name="how_to_reach">How to Reach</string>
+    <string name="service_Detail">Service Detail</string>
+    <string name="service_category">Service Category</string>
 </resources>

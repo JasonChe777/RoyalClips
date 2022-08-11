@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/drawerLayout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.MainActivity">
@@ -26,9 +26,9 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/boundary"
                 android:minHeight="?attr/actionBarSize"
+                android:theme="@style/AppTheme"
                 app:title="@string/royal_clips"
-                app:titleTextColor="@color/loginTextColor"
-                android:theme="@style/AppTheme">
+                app:titleTextColor="@color/loginTextColor">
 
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
@@ -74,7 +74,7 @@
                 android:id="@+id/cvBookAppointment"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:backgroundTint="@color/splashScreenBackgroundColor"
+                android:backgroundTint="@color/backgroundColor"
                 app:layout_constraintBottom_toTopOf="@id/divider_horizontal"
                 app:layout_constraintEnd_toStartOf="@id/divider_vertical"
                 app:layout_constraintStart_toStartOf="parent"
@@ -91,9 +91,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="60dp"
+                    android:fontFamily="cursive"
                     android:text="@string/book_appointment"
-                    android:textColor="@color/loginTextColor" />
+                    android:textColor="@color/loginTextColor"
+                    android:textSize="25sp" />
 
             </androidx.cardview.widget.CardView>
 
@@ -101,7 +103,7 @@
                 android:id="@+id/cvService"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:backgroundTint="@color/splashScreenBackgroundColor"
+                android:backgroundTint="@color/backgroundColor"
                 app:layout_constraintBottom_toTopOf="@id/divider_horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/divider_vertical"
@@ -118,9 +120,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="60dp"
+                    android:fontFamily="cursive"
                     android:text="@string/our_services"
-                    android:textColor="@color/loginTextColor" />
+                    android:textColor="@color/loginTextColor"
+                    android:textSize="25sp" />
 
             </androidx.cardview.widget.CardView>
 
@@ -128,7 +132,7 @@
                 android:id="@+id/cvOpenShop"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:backgroundTint="@color/splashScreenBackgroundColor"
+                android:backgroundTint="@color/backgroundColor"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/divider_vertical"
                 app:layout_constraintStart_toStartOf="parent"
@@ -142,12 +146,29 @@
                     android:src="@drawable/ic_baseline_store_24" />
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_shop_status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:text="@string/shop_open"
-                    android:textColor="@color/loginTextColor" />
+                    android:layout_marginTop="60dp"
+                    android:fontFamily="cursive"
+                    android:textColor="@color/purple_200"
+                    android:textSize="25sp"
+                    tools:text="@string/shop_open" />
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/progressBar"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="60dp"
+                    android:indeterminate="true"
+                    app:indicatorColor="@color/loginBtnColor"
+                    app:indicatorDirectionCircular="clockwise"
+                    app:indicatorSize="60dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:trackColor="@color/backgroundColor"
+                    app:trackThickness="20dp" />
 
             </androidx.cardview.widget.CardView>
 
@@ -155,7 +176,7 @@
                 android:id="@+id/cvExploreMore"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:backgroundTint="@color/splashScreenBackgroundColor"
+                android:backgroundTint="@color/backgroundColor"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/divider_vertical"
@@ -172,9 +193,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="60dp"
+                    android:fontFamily="cursive"
                     android:text="@string/explore_more"
-                    android:textColor="@color/loginTextColor" />
+                    android:textColor="@color/loginTextColor"
+                    android:textSize="25sp" />
             </androidx.cardview.widget.CardView>
 
 

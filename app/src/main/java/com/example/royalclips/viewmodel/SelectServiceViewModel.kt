@@ -3,8 +3,8 @@ package com.example.royalclips.viewmodel
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.royalclips.model.data.bookAppointments.Service
 import com.example.royalclips.model.data.getBarberServices.GetBarberServiceResponse
-import com.example.royalclips.model.data.getBarberServices.Service
 import com.example.royalclips.model.remote.ApiClient
 import com.example.royalclips.model.remote.ApiService
 import com.google.gson.Gson
@@ -15,7 +15,6 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
-import kotlin.math.roundToInt
 
 class SelectServiceViewModel : ViewModel() {
 
@@ -25,8 +24,6 @@ class SelectServiceViewModel : ViewModel() {
     val barberServicesLiveData = MutableLiveData<ArrayList<Service>>()
     val barberServicesSelectLiveData = MutableLiveData<ArrayList<Int>>()
     val barberServicesTypeLiveData = MutableLiveData<ArrayList<String>>()
-    val appointmentsTotalDurationLiveData = MutableLiveData<Double>()
-    val appointmentsSlotLiveData = MutableLiveData<Int>()
     val loadingLiveData = MutableLiveData<Boolean>()
 
     fun getServicesByBarber(barberId: Int) {
@@ -71,14 +68,26 @@ class SelectServiceViewModel : ViewModel() {
         }
     }
 
-    fun updateAppointmentsSlot() {
+    fun getAppointmentsSlot():Int {
         var totalDuration = 0.0
         barberServicesLiveData.value!!.forEach() {
             if (it.serviceId in barberServicesSelectLiveData.value!!) {
                 totalDuration += it.duration
             }
         }
-        appointmentsTotalDurationLiveData.postValue(totalDuration)
-        appointmentsSlotLiveData.postValue((totalDuration / 15).roundToInt())
+
+        return if ((totalDuration % 15).toInt() == 0 ){
+            (totalDuration/15).toInt()
+        }else{
+            (totalDuration/15).toInt() + 1
+        }
     }
+
+    fun getSelectedServiceList(): ArrayList<Service> {
+        var arrayList:ArrayList<Service> = arrayListOf()
+        (barberServicesLiveData.value!!.filter { barberServicesSelectLiveData.value!!.contains(it.serviceId) }).forEach { arrayList.add(it) }
+        return arrayList
+    }
+
+
 }

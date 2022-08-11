@@ -11,4 +11,6 @@
     <color name="loginTextColor">#CBB26A</color>
     <color name="loginBtnColor">#be9e44</color>
     <color name="time_slot_booked">#D50000</color>
+    <color name="backgroundColor">#FF000000</color>
+    <color name="blackTextColor">#FF000000</color>
 </resources>

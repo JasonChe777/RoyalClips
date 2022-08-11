@@ -1,5 +1,9 @@
 package com.example.royalclips.model.data.login
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class LoginResponse(
     val apiToken: String,
     val createdOn: String,
@@ -24,4 +28,4 @@ data class LoginResponse(
     val tokenValidUpTo: String,
     val updatedOn: String,
     val userId: Int
-)
+): Parcelable

@@ -10,7 +10,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.royalclips.R
 import com.example.royalclips.databinding.ActivitySelectServiceBinding
-import com.example.royalclips.view.adapter.SelectBarberAdapter.Companion.BARBER_ID
+import com.example.royalclips.model.data.getBarber.Barber
+import com.example.royalclips.view.AppointmentInfoActivity.Companion.IS_FROM_RESCHEDULE
+import com.example.royalclips.view.adapter.SelectBarberAdapter.Companion.BARBER
 import com.example.royalclips.view.adapter.SelectServiceClassAdapter
 import com.example.royalclips.viewmodel.SelectServiceViewModel
 
@@ -19,14 +21,16 @@ class SelectServiceActivity : AppCompatActivity() {
     private lateinit var binding:ActivitySelectServiceBinding
     private lateinit var viewModel:SelectServiceViewModel
     private lateinit var adapter: SelectServiceClassAdapter
+    private lateinit var barber:Barber
+    private  var isFromReschedule:Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySelectServiceBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val barberId = intent.extras?.get(BARBER_ID)
+        barber = intent.extras?.get(BARBER) as Barber
         viewModel = ViewModelProvider(this)[SelectServiceViewModel::class.java]
-        viewModel.getServicesByBarber(barberId as Int)
+        viewModel.getServicesByBarber(barber.barberId)
         initView()
         setUpObserver()
     }
@@ -51,8 +55,12 @@ class SelectServiceActivity : AppCompatActivity() {
                 alertDialog.setCancelable(true)
                 alertDialog.show()
             } else {
-                viewModel.updateAppointmentsSlot()
-                startActivity(Intent(this@SelectServiceActivity, SelectTimeActivity::class.java))
+                val intent = Intent(this@SelectServiceActivity, SelectTimeActivity::class.java)
+                intent.putExtra(BARBER, barber)
+                intent.putExtra(SLOT_NUMBER,viewModel.getAppointmentsSlot())
+                intent.putParcelableArrayListExtra(SELECTED_SERVICE, viewModel.getSelectedServiceList())
+                intent.putExtra(IS_FROM_RESCHEDULE,isFromReschedule)
+                startActivity(intent)
             }
         }
     }
@@ -78,5 +86,10 @@ class SelectServiceActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    companion object{
+        const val SLOT_NUMBER = "SLOT_NUMBER"
+        const val SELECTED_SERVICE = "SELECTED_SERVICE"
+
+    }
 
 }

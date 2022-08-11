@@ -15,14 +15,12 @@ import com.example.royalclips.view.SelectTimeActivity
 import com.example.royalclips.viewmodel.SelectTimeViewModel
 
 
-class SelectDateAdapter(private val context: Context, private val infoList: List<Slot>) :
+class SelectDateAdapter(private val context: Context, private val infoList: List<Slot>,private val viewModel:SelectTimeViewModel) :
     RecyclerView.Adapter<SelectDateAdapter.SelectDateHolder>() {
-    lateinit var viewModel: SelectTimeViewModel
     lateinit var binding: ItemSelectDateBinding
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SelectDateHolder {
         binding = ItemSelectDateBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        viewModel = ViewModelProvider(context as SelectTimeActivity)[SelectTimeViewModel::class.java]
         return SelectDateHolder(binding)
     }
 
@@ -63,6 +61,7 @@ class SelectDateAdapter(private val context: Context, private val infoList: List
             }
             binding.root.setOnClickListener {
                 viewModel.appointmentsDateLiveData.postValue(slot.date)
+                viewModel.startFromSlotLiveData.postValue(-1)
             }
         }
     }

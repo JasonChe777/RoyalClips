@@ -1,5 +1,9 @@
-package com.example.royalclips.model.data.getBarberServices
+package com.example.royalclips.model.data.bookAppointments
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Service(
     val cost: Double,
     val duration: Double,
@@ -7,4 +11,4 @@ data class Service(
     val serviceName: String,
     val servicePic: String,
     val serviceType: String
-)
+): Parcelable

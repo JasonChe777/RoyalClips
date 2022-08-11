@@ -1,17 +1,17 @@
 package com.example.royalclips.view.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.royalclips.R
 import com.example.royalclips.databinding.ItemSelectServiceBinding
 import com.example.royalclips.model.Constants.BASE_IMAGE_URL
-import com.example.royalclips.model.data.getBarberServices.Service
+import com.example.royalclips.model.data.bookAppointments.Service
 import com.example.royalclips.view.SelectServiceActivity
 import com.example.royalclips.viewmodel.SelectServiceViewModel
 
@@ -41,10 +41,11 @@ class SelectServiceAdapter(private val context: Context, private val infoList: L
     inner class SelectServiceHolder(private val binding: ItemSelectServiceBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
+        @SuppressLint("SetTextI18n")
         fun bind(service: Service) {
             binding.tvServiceName.text = service.serviceName
-            binding.tvCost.text = service.cost.toString()
-            binding.tvDuration.text = service.duration.toString()
+            binding.tvCost.text = service.cost.toInt().toString()+" USD"
+            binding.tvDuration.text = service.duration.toInt().toString()+" Minutes"
             if(service.serviceId in viewModel.barberServicesSelectLiveData.value!!){
                 binding.ivSelect.isSelected = true
             }

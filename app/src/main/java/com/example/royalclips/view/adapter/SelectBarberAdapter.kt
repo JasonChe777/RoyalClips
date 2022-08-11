@@ -40,19 +40,19 @@ class SelectBarberAdapter(
 
         fun bind(barber: Barber) {
             binding.tvBarberName.text = barber.barberName
-            binding.rbRating.rating = barber.userRating.toFloat()
+            binding.rbRating.rating = barber.userRating!!.toFloat()
             Glide.with(context)
                 .load(BASE_IMAGE_URL + barber.profilePic)
                 .into(binding.ivProfilePic)
             binding.root.setOnClickListener {
                 val intent = Intent(binding.root.context, SelectServiceActivity::class.java)
-                intent.putExtra(BARBER_ID, barber.barberId)
+                intent.putExtra(BARBER, barber)
                 binding.root.context.startActivity(intent)
             }
         }
     }
 
     companion object {
-        const val BARBER_ID = "BARBER_ID"
+        const val BARBER = "BARBER"
     }
 }
