@@ -2,7 +2,6 @@ package com.example.royalclips.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.royalclips.R
 import com.example.royalclips.databinding.ActivityAboutBinding
 
 class AboutActivity : AppCompatActivity() {

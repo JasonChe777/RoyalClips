@@ -95,7 +95,8 @@
                     android:fontFamily="cursive"
                     android:text="@string/book_appointment"
                     android:textColor="@color/loginTextColor"
-                    android:textSize="25sp" />
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
 
             </androidx.cardview.widget.CardView>
 
@@ -124,7 +125,8 @@
                     android:fontFamily="cursive"
                     android:text="@string/our_services"
                     android:textColor="@color/loginTextColor"
-                    android:textSize="25sp" />
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
 
             </androidx.cardview.widget.CardView>
 
@@ -154,6 +156,7 @@
                     android:fontFamily="cursive"
                     android:textColor="@color/purple_200"
                     android:textSize="25sp"
+                    android:textStyle="bold"
                     tools:text="@string/shop_open" />
 
                 <com.google.android.material.progressindicator.CircularProgressIndicator
@@ -197,7 +200,8 @@
                     android:fontFamily="cursive"
                     android:text="@string/explore_more"
                     android:textColor="@color/loginTextColor"
-                    android:textSize="25sp" />
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
 

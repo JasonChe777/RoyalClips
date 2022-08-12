@@ -3,11 +3,9 @@ package com.example.royalclips.view.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.royalclips.databinding.ItemSelectServiceBinding
 import com.example.royalclips.databinding.ItemSelectServiceClassBinding
 import com.example.royalclips.view.SelectServiceActivity
 import com.example.royalclips.viewmodel.SelectServiceViewModel

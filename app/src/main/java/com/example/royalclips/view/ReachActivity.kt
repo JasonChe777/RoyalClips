@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.royalclips.R
 import com.example.royalclips.databinding.ActivityReachBinding
 import com.example.royalclips.view.adapter.ReachAdapter
-import com.example.royalclips.view.adapter.WorkingHourAdapter
 import com.example.royalclips.viewmodel.MainViewModel
 
 class ReachActivity : AppCompatActivity() {

@@ -5,12 +5,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.royalclips.R
 import com.example.royalclips.databinding.ItemSelectTimeBinding
-import com.example.royalclips.view.SelectTimeActivity
-import com.example.royalclips.viewmodel.SelectServiceViewModel
 import com.example.royalclips.viewmodel.SelectTimeViewModel
 
 class SelectTimeAdapter(

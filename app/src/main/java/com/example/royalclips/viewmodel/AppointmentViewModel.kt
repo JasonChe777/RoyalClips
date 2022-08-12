@@ -7,7 +7,6 @@ import com.example.royalclips.model.data.bookAppointments.Appointment
 import com.example.royalclips.model.data.bookAppointments.BookResponse
 import com.example.royalclips.model.data.getAppointments.AppointmentInfo
 import com.example.royalclips.model.data.getAppointments.GetAppointmentsResponse
-import com.example.royalclips.model.data.login.LoginResponse
 import com.example.royalclips.model.remote.ApiClient
 import com.example.royalclips.model.remote.ApiService
 import com.google.gson.Gson

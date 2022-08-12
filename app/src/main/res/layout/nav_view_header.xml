@@ -4,15 +4,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    android:padding="20dp"
     android:background="@color/backgroundColor"
     android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/iv_user_image"
-            android:layout_width="150dp"
-            android:layout_height="140dp"
+            android:layout_width="170dp"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"
             android:src="@drawable/logo"
+            android:scaleType="fitXY"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
@@ -21,6 +22,7 @@
             android:id="@+id/tv_nav_header_mobileNo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:text="MobileNo"
             android:textColor="@color/loginTextColor"
             app:layout_constraintStart_toStartOf="parent"

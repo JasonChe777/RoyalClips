@@ -7,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import com.example.royalclips.model.data.BaseResponse
 import com.example.royalclips.model.data.contacts.Contact
 import com.example.royalclips.model.data.dashboard.DashboardResponse
-import com.example.royalclips.model.data.login.LoginResponse
 import com.example.royalclips.model.data.workingHour.Weekday
 import com.example.royalclips.model.remote.ApiClient
 import com.example.royalclips.model.remote.ApiService

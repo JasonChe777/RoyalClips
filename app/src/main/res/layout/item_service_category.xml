@@ -13,8 +13,8 @@
 
         <ImageView
             android:id="@+id/iv_category_photo"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
             android:scaleType="fitXY" />
 
         <TextView

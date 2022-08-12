@@ -4,9 +4,6 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
-import android.widget.Toast.makeText
 import androidx.lifecycle.ViewModelProvider
 import com.example.royalclips.databinding.ActivityLoginBinding
 import com.example.royalclips.model.data.login.LoginRequest

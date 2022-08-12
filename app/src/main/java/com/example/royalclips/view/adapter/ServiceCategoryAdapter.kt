@@ -4,16 +4,12 @@ import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.royalclips.databinding.ItemServiceCategoryBinding
 import com.example.royalclips.model.Constants
-import com.example.royalclips.model.data.getAppointments.toAppointment
 import com.example.royalclips.model.data.getServiceCategory.ServiceCategory
-import com.example.royalclips.view.AppointmentInfoActivity
-import com.example.royalclips.view.AppointmentSummaryActivity
 import com.example.royalclips.view.ServiceCategoryActivity
 import com.example.royalclips.view.ServiceListActivity
 import com.example.royalclips.viewmodel.ServiceViewModel

@@ -20,7 +20,6 @@ class ServiceViewModel: ViewModel() {
     val serviceCategoriesLiveData = MutableLiveData<ArrayList<ServiceCategory>>()
     val serviceCategoryIdLiveData = MutableLiveData<Int>()
     val servicesListLiveData = MutableLiveData<ArrayList<ServiceDetail>>()
-    val serviceLiveData = MutableLiveData<ServiceDetail>()
     val loadingLiveData = MutableLiveData<Boolean>()
 
     fun getServiceCategories() {

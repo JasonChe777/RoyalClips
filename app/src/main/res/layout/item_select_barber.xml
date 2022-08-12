@@ -60,7 +60,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:progressTint="@color/purple_700"
+                    android:progressTint="#DC0707"
                     android:background="@color/loginBtnColor" />
             </LinearLayout>
         </RelativeLayout>

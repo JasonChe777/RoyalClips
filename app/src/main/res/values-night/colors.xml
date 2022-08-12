@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="loginTextColor">#CBB26A</color>
-    <color name="loginBtnColor">#be9e44</color>
+    <color name="loginTextColor">#F5F3F8</color>
+    <color name="loginBtnColor">#1F3BC8</color>
     <color name="backgroundColor">#1E88E5</color>
 </resources>
