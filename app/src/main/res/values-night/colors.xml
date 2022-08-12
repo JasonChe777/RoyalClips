@@ -3,4 +3,6 @@
     <color name="loginTextColor">#F5F3F8</color>
     <color name="loginBtnColor">#1F3BC8</color>
     <color name="backgroundColor">#1E88E5</color>
+    <color name="howToReachColor">#D81B60</color>
+    <color name="red">#E60F3A</color>
 </resources>

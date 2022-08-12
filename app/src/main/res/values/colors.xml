@@ -13,4 +13,6 @@
     <color name="time_slot_booked">#D50000</color>
     <color name="backgroundColor">#FF000000</color>
     <color name="blackTextColor">#FF000000</color>
+    <color name="howToReachColor">#00897B</color>
+    <color name="red">#E60F3A</color>
 </resources>

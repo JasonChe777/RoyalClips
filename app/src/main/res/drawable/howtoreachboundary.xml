@@ -10,7 +10,7 @@
             <stroke
                 android:width="4dp"
                 android:color="@color/loginBtnColor" />
-            <solid android:color="@color/teal_700" />
+            <solid android:color="@color/howToReachColor" />
             <size android:height="50dp"/>
         </shape>
     </item>

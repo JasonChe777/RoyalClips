@@ -10,7 +10,7 @@
             <stroke
                 android:width="4dp"
                 android:color="@color/loginTextColor" />
-            <solid android:color="@color/splashScreenBackgroundColor" />
+            <solid android:color="@color/backgroundColor" />
             <size android:height="50dp"/>
         </shape>
     </item>

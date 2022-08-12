@@ -28,8 +28,8 @@ class WorkingHourAdapter(private val context: Context, private val infoMap: Map<
             val weekday = infoMap[day]
             holder.bind(day, weekday!!)
             if (position == 0){
-                binding.tvDay.setTextColor(context.resources.getColor(R.color.purple_200))
-                binding.tvTime.setTextColor(context.resources.getColor(R.color.purple_200))
+                binding.tvDay.setTextColor(context.resources.getColor(R.color.purple_700))
+                binding.tvTime.setTextColor(context.resources.getColor(R.color.purple_700))
             }
         }
     }
@@ -46,7 +46,7 @@ class WorkingHourAdapter(private val context: Context, private val infoMap: Map<
             var time = "${weekday.fromTime} to ${weekday.toTime}"
             if(weekday.fromTime == weekday.toTime){
                 time = "Holiday"
-                binding.tvTime.setTextColor(context.resources.getColor(R.color.purple_500))
+                binding.tvTime.setTextColor(context.resources.getColor(R.color.red))
             }
             binding.tvDay.text = day
             binding.tvTime.text = time
