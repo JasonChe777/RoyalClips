@@ -49,7 +49,7 @@ class ReachAdapter(private val context: Context, private val infoList: ArrayList
             if (contact.contactType == "PHONE") {
                 binding.ivBynIcon1.setImageResource(R.drawable.ic_baseline_phone_24)
                 binding.ivBynIcon2.visibility = View.VISIBLE
-                binding.ivBynIcon2.setImageResource(R.drawable.ic_baseline_email_24)
+                binding.ivBynIcon2.setImageResource(R.drawable.ic_baseline_textsms_24)
                 Glide.with(context)
                     .load(Constants.BASE_IMAGE_URL + contact.iconUrl)
                     .into(binding.ivIcon)
