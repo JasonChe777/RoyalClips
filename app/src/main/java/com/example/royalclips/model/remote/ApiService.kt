@@ -11,6 +11,7 @@ import com.example.royalclips.model.data.dashboard.DashboardResponse
 import com.example.royalclips.model.data.getAppointments.GetAppointmentsResponse
 import com.example.royalclips.model.data.getBarber.GetBarberResponse
 import com.example.royalclips.model.data.getBarberServices.GetBarberServiceResponse
+import com.example.royalclips.model.data.getPhoneVerificationCode.GetPhoneVerificationCodeResponse
 import com.example.royalclips.model.data.getServiceCategory.GetServiceCategoryResponse
 import com.example.royalclips.model.data.getServicesByCategory.GetServicesByCategoryResponse
 import com.example.royalclips.model.data.login.LoginRequest
@@ -121,5 +122,13 @@ interface ApiService {
     @Headers("Content-type: application/json")
     @GET("shopContacts/getList")
     suspend fun getContacts(): Response<ContactsResponse>
+
+    @Headers("Content-type: application/json")
+    @GET
+    suspend fun getPhoneVerificationCode (@Url url: String): GetPhoneVerificationCodeResponse
+
+    @Headers("Content-type: application/json")
+    @POST("appUser/resetPassword")
+    suspend fun resetPassword (@Body updateReq: RequestBody): BaseResponse
 }
 

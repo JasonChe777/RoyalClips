@@ -45,6 +45,10 @@ class LoginActivity : AppCompatActivity() {
         binding.tvSignUp.setOnClickListener {
             startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
         }
+
+        binding.tvForgotPassword.setOnClickListener {
+            startActivity(Intent(this@LoginActivity, ResetPasswordActivity::class.java))
+        }
     }
 
     private fun setUpObserver() {

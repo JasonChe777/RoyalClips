@@ -26,4 +26,6 @@
     <string name="how_to_reach">How to Reach</string>
     <string name="service_Detail">Service Detail</string>
     <string name="service_category">Service Category</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="Verification_Code">Verification Code</string>
 </resources>
