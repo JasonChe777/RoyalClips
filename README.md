@@ -6,6 +6,7 @@
 This application basically benefits the auidience who have the needs of booking appintments for barber and massage service, users can manage their apointments with their time schedule, and track the booked appointments in case they forget about the time.
 ## Features:
 - Sign In / Sign Up
+- Reset Password with Phone Verification Code
 - Book Appointment 
 - Cancel Appointment
 - Check the Appointment Details after Booking
@@ -53,7 +54,6 @@ This application basically benefits the auidience who have the needs of booking 
 
 ## Pending Features to be done
 
-- Forget Password
 - Notification after Booking an Appointment
 - User Rating
 
