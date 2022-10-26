@@ -1,6 +1,6 @@
 # RoyalClips 
 
-**RoyalClips** is a sample android application to book appointments for barber and massage service using API which is built to demonstrate use of *Modern Android development* tools. It has been built using kotlin with clean architecture principles and MVVM as well as Architecture Components. Dedicated to all Android Developers with ❤️.
+**RoyalClips** is an android application to book appointments for barber and massage service using API which is built to demonstrate use of *Modern Android development* tools. It has been built using kotlin with clean architecture principles and MVVM as well as Architecture Components. Dedicated to all Android Developers with ❤️.
 
 ## About
 This application basically benefits the auidience who have the needs of booking appintments for barber and massage service, users can manage their apointments with their time schedule, and track the booked appointments in case they forget about the time.
